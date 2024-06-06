@@ -1650,8 +1650,17 @@ extractTech4 <- function(outfiletext, filename) {
     targetList <- list()
     
     targetList[["latMeansEst"]] <- matrixExtract(tech4Subsections[[g]], "ESTIMATED MEANS FOR THE LATENT VARIABLES", filename)
+    targetList[["latMeansSE"]] <- matrixExtract(tech4Subsections[[g]], "S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES", filename)
+    targetList[["latMeansEstoverSE"]] <- matrixExtract(tech4Subsections[[g]], "EST./S.E. FOR ESTIMATED MEANS FOR THE LATENT VARIABLES", filename)
+    targetList[["latMeansPval"]] <- matrixExtract(tech4Subsections[[g]], "TWO-TAILED P-VALUE FOR ESTIMATED MEANS FOR THE LATENT VARIABLES", filename)
     targetList[["latCovEst"]] <- matrixExtract(tech4Subsections[[g]], "ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCovSE"]] <- matrixExtract(tech4Subsections[[g]], "S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCovEstoverSE"]] <- matrixExtract(tech4Subsections[[g]], "EST./S.E. FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCovPval"]] <- matrixExtract(tech4Subsections[[g]], "TWO-TAILED P-VALUE FOR ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES", filename)
     targetList[["latCorEst"]] <- matrixExtract(tech4Subsections[[g]], "ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCorSE"]] <- matrixExtract(tech4Subsections[[g]], "S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCorEstoverSE"]] <- matrixExtract(tech4Subsections[[g]], "EST./S.E. FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES", filename)
+    targetList[["latCorPval"]] <- matrixExtract(tech4Subsections[[g]], "TWO-TAILED P-VALUE FOR ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES", filename)
     
     if (length(tech4Subsections) > 1) {
       class(targetList) <- c("mplus.tech4", "list")
